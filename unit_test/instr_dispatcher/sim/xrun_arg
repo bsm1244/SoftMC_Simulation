@@ -1,0 +1,22 @@
+
+-access rwc
+-64
+
+-smartorder
+-v93
+-licqueue
+
+-incdir ../rtl
+-incdir ../../../xlib/mig/sim/
+
++libext+.v
+-y ../../../xlib/ISE/unisims
+-y ../../../xlib/ISE/XilinxCoreLib
+
+-top tb_softMC_top
+-top glbl
+
+-f filelist
+
+
+

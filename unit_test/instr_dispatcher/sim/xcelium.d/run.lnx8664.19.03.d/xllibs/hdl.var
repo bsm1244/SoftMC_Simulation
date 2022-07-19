@@ -1,0 +1,6 @@
+define LIB_MAP ( $LIB_MAP \
+, ../../../../../../xlib/ISE/unisims => unisims \
+)
+define LIB_MAP ( $LIB_MAP \
+, ../../../../../../xlib/ISE/unisims => unisims \
+)

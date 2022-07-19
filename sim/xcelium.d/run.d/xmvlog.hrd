@@ -1,0 +1,18 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-YDIR
+/scale/cal1/opt/Xilinx/14.6/ISE_DS/ISE/verilog/src/unisims
+-YDIR
+/scale/cal1/opt/Xilinx/14.6/ISE_DS/ISE/verilog/src/XilinxCoreLib
+-INCDIR
+../rtl
+-INCDIR
+../xlib/mig/sim/
+-LIBEXT
+.v
+-DEFINE
+WAVE
+-DEFINE
+DEBUG=0

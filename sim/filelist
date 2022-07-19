@@ -1,0 +1,80 @@
+
+
+###################################
+# Vivado Native
+###################################
+$XILINX_VIVADO/data/verilog/src/glbl.v
+
+
+###################################
+# MIG
+###################################
+../xlib/mig/rtl/ip_top/iodelay_ctrl.v
+../xlib/mig/rtl/ip_top/infrastructure.v
+../xlib/mig/rtl/phy/phy_top.v
+../xlib/mig/rtl/phy/phy_init.v
+../xlib/mig/rtl/phy/phy_control_io.v
+../xlib/mig/rtl/phy/phy_clock_io.v
+../xlib/mig/rtl/phy/phy_data_io.v
+../xlib/mig/rtl/phy/phy_dly_ctrl.v
+../xlib/mig/rtl/phy/phy_write.v
+../xlib/mig/rtl/phy/phy_read.v
+../xlib/mig/rtl/phy/phy_rdlvl.v
+../xlib/mig/rtl/phy/phy_rdclk_gen.v
+../xlib/mig/rtl/phy/phy_rdctrl_sync.v
+../xlib/mig/rtl/phy/phy_rddata_sync.v
+../xlib/mig/rtl/phy/phy_wrlvl.v
+../xlib/mig/rtl/phy/phy_ck_iob.v
+../xlib/mig/rtl/phy/phy_dq_iob.v
+../xlib/mig/rtl/phy/phy_dqs_iob.v
+../xlib/mig/rtl/phy/phy_pd_top.v
+../xlib/mig/rtl/phy/phy_pd.v
+../xlib/mig/rtl/phy/circ_buffer.v
+../xlib/mig/rtl/phy/rd_bitslip.v
+
+../xlib/mig/sim/wiredly.v
+../xlib/mig/sim/ddr3_model.v
+#../xlib/mig/sim/ddr3_model_parameters.vh
+
+
+###################################
+# Instr FIFO
+###################################
+../xlib/instr_fifo/instr_fifo.v
+
+
+###################################
+# RDBack FIFO
+###################################
+../xlib/rdback_fifo/rdback_fifo.v
+
+###################################
+# Riffa
+###################################
+
+
+###################################
+# SoftMC rtl_copy
+###################################
+../rtl_copy/softMC_top.v
+../rtl_copy/softMC.v
+../rtl_copy/maint_ctrl.v
+../rtl_copy/maint_handler.v
+../rtl_copy/maint_handler.v
+../rtl_copy/autoref_config.v
+../rtl_copy/instr_receiver.v
+../rtl_copy/instr_dispatcher.v
+../rtl_copy/instr_decoder.v
+../rtl_copy/iseq_dispatcher.v
+../rtl_copy/pipe_reg.v
+../rtl_copy/read_capturer.v
+# ../rtl_copy/RH_generator.v
+
+###################################
+# top
+###################################
+./tb_softMC_top_copy.v
+
+
+
+

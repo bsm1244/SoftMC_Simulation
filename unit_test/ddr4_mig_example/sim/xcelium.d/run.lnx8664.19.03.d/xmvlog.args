@@ -1,0 +1,26 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-XLMODE
+./xcelium.d/run.lnx8664.19.03.d
+-RUNMODE
+-sv
+-LIBEXT
+.v
+-CDSLIB
+./xcelium.d/run.lnx8664.19.03.d/cdsrun.lib
+/tools/Xilinx/Vivado/2020.2/data/verilog/src/glbl.v
+../src/sim_tb_top.sv
+../src/sim_tb_top.sv
+../src/sim_tb_top.sv
+-DEFINE
+WAVE
+-HDLVAR
+./xcelium.d/run.lnx8664.19.03.d/hdlrun.var
+-MESSAGES
+-UPDATE
+-XLLIBSTORE
+./xcelium.d/run.lnx8664.19.03.d/xllibs
+-ALLOWUNBOUND
+-hastop

@@ -1,0 +1,3 @@
+./ddr3_model_parameters.vh
+../rtl/ddr3_model_parameters.vh
+./softMC.inc

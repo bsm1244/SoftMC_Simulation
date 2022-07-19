@@ -1,0 +1,18 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-YDIR
+../xlib/ISE/unisims
+-YDIR
+../xlib/ISE/XilinxCoreLib
+-INCDIR
+../rtl
+-INCDIR
+../xlib/mig/sim/
+-LIBEXT
+.v
+-DEFINE
+WAVE
+-DEFINE
+DEBUG=0

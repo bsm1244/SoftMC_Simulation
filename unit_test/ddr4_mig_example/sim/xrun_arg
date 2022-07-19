@@ -1,0 +1,47 @@
+#
+
+-access rwc
+-64
+
+-smartorder
+-v93
+-sv
+-licqueue
+
+#-incdir ../rtl
+#-incdir ../../../xlib/mig/sim/
+
++incdir+"/home/jhpark/workspace/vivado/ddr4_mig/ddr4_0_ex/ddr4_0_ex.sim/sim_1/behav/xcelium/../../../../ddr4_0_ex.gen/sources_1/ip/ddr4_0/ip_1/rtl/map"
++incdir+"/home/jhpark/workspace/vivado/ddr4_mig/ddr4_0_ex/ddr4_0_ex.sim/sim_1/behav/xcelium/../../../../ddr4_0_ex.gen/sources_1/ip/ddr4_0/rtl/ip_top"
++incdir+"/home/jhpark/workspace/vivado/ddr4_mig/ddr4_0_ex/ddr4_0_ex.sim/sim_1/behav/xcelium/../../../../ddr4_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal"
++incdir+"/home/jhpark/workspace/vivado/ddr4_mig/ddr4_0_ex/ddr4_0_ex.sim/sim_1/behav/xcelium/../../../../imports"
++incdir+"/home/jhpark/workspace/vivado/ddr4_mig/ddr4_0_ex/ddr4_0_ex.sim/sim_1/behav/xcelium/../../../../ddr4_0_ex.gen/sources_1/ip/ddr4_0/ip_1/rtl/map"
++incdir+"/home/jhpark/workspace/vivado/ddr4_mig/ddr4_0_ex/ddr4_0_ex.sim/sim_1/behav/xcelium/../../../../ddr4_0_ex.gen/sources_1/ip/ddr4_0/rtl/ip_top"
++incdir+"/home/jhpark/workspace/vivado/ddr4_mig/ddr4_0_ex/ddr4_0_ex.sim/sim_1/behav/xcelium/../../../../ddr4_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal"
++incdir+"/home/jhpark/workspace/vivado/ddr4_mig/ddr4_0_ex/ddr4_0_ex.sim/sim_1/behav/xcelium/../../../../imports"
++incdir+"/home/jhpark/workspace/vivado/ddr4_mig/ddr4_0_ex/ddr4_0_ex.sim/sim_1/behav/xcelium/../../../../ddr4_0_ex.gen/sources_1/ip/ddr4_0/ip_1/rtl/map"
++incdir+"/home/jhpark/workspace/vivado/ddr4_mig/ddr4_0_ex/ddr4_0_ex.sim/sim_1/behav/xcelium/../../../../ddr4_0_ex.gen/sources_1/ip/ddr4_0/rtl/ip_top"
++incdir+"/home/jhpark/workspace/vivado/ddr4_mig/ddr4_0_ex/ddr4_0_ex.sim/sim_1/behav/xcelium/../../../../ddr4_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal"
++incdir+"/home/jhpark/workspace/vivado/ddr4_mig/ddr4_0_ex/ddr4_0_ex.sim/sim_1/behav/xcelium/../../../../imports"
++incdir+"/home/jhpark/workspace/vivado/ddr4_mig/ddr4_0_ex/ddr4_0_ex.sim/sim_1/behav/xcelium/../../../../ddr4_0_ex.gen/sources_1/ip/ddr4_0/ip_1/rtl/map"
++incdir+"/home/jhpark/workspace/vivado/ddr4_mig/ddr4_0_ex/ddr4_0_ex.sim/sim_1/behav/xcelium/../../../../ddr4_0_ex.gen/sources_1/ip/ddr4_0/rtl/ip_top"
++incdir+"/home/jhpark/workspace/vivado/ddr4_mig/ddr4_0_ex/ddr4_0_ex.sim/sim_1/behav/xcelium/../../../../ddr4_0_ex.gen/sources_1/ip/ddr4_0/rtl/cal"
++incdir+"/home/jhpark/workspace/vivado/ddr4_mig/ddr4_0_ex/ddr4_0_ex.sim/sim_1/behav/xcelium/../../../../imports"
+
+
+
++libext+.v
+#-y ../../../xlib/ISE/unisims
+#-y ../../../xlib/ISE/XilinxCoreLib
+
+
+-cdslib /home/jhpark/workspace/vivado/compile_simlib/cds_unisims_ver.lib
+#-cdslib /home/jhpark/workspace/vivado/compile_simlib/cds_simprims_ver.lib
+
+-top example_top
+-top glbl
+
+-f filelist
+
+
+

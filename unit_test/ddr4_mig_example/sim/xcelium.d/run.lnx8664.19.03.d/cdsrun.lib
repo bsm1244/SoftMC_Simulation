@@ -1,0 +1,2 @@
+include ../../../../../../../../../workspace/vivado/compile_simlib/cds_unisims_ver.lib
+define worklib ../worklib

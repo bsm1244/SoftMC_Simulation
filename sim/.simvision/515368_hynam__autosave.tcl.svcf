@@ -1,0 +1,162 @@
+
+#
+# Preferences
+#
+preferences set plugin-enable-svdatabrowser-new 1
+preferences set toolbar-Standard-Console {
+  usual
+  position -pos 1
+}
+preferences set toolbar-Search-Console {
+  usual
+  position -pos 2
+}
+preferences set toolbar-Standard-WaveWindow {
+  usual
+  position -pos 1
+}
+preferences set plugin-enable-groupscope 0
+preferences set plugin-enable-interleaveandcompare 0
+preferences set plugin-enable-waveformfrequencyplot 0
+
+#
+# Databases
+#
+database require WAVE -search {
+	../../hbm_softmc/system/sim/WAVE/WAVE.trn
+	/home/hynam/Desktop/projects/iitp_hbm/hbm_softmc/system/sim/WAVE/WAVE.trn
+}
+
+#
+# Mnemonic Maps
+#
+mmap new  -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1918x2054+1921+45}] != ""} {
+    window geometry "Waveform 1" 1918x2054+1921+45
+}
+window target "Waveform 1" on
+waveform using {Waveform 1}
+waveform sidebar select designbrowser
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 175 \
+    -units ns \
+    -valuewidth 75
+waveform baseline set -time 0
+
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.autoref_ack
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.autoref_en
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.autoref_interval[27:0]}
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.autoref_req
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.clk
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.dfi_init_complete
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.maint_prescaler_tick
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.rstn
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.i_autoref_ctrl.autoref_ack
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.i_autoref_ctrl.autoref_en
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.i_autoref_ctrl.autoref_interval[27:0]}
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.i_autoref_ctrl.autoref_req
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.i_autoref_ctrl.autoref_request
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.i_autoref_ctrl.autoref_request_r
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.i_autoref_ctrl.autoref_timer[27:0]}
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.i_autoref_ctrl.autoref_timer_one
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.i_autoref_ctrl.autoref_timer_r[27:0]}
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.i_autoref_ctrl.clk
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.i_autoref_ctrl.dfi_init_complete
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.i_autoref_ctrl.maint_prescaler_tick
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.i_autoref_ctrl.ref_en_r
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.i_autoref_ctrl.rstn
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.i_maint_ctrl.clk
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.i_maint_ctrl.dfi_init_complete
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.i_maint_ctrl.maint_prescaler_ns[2:0]}
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.i_maint_ctrl.maint_prescaler_r[2:0]}
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.i_maint_ctrl.maint_prescaler_tick
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.i_maint_ctrl.maint_prescaler_tick_ns
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.i_maint_ctrl.maint_prescaler_tick_r_lcl
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_hbm_softmc.u_softmc_top.u_softmc.i_maint_ctrl.i_maint_ctrl.rstn
+	} ]
+
+waveform xview limits 0 99832.5ns
+
+#
+# Waveform Window Links
+#
+
+#
+# Console windows
+#
+console set -windowname Console
+window geometry Console 600x250+0+0
+
+#
+# Layout selection
+#

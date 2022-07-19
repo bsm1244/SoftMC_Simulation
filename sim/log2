@@ -1,0 +1,11 @@
+TOOL:	xrun(64)	19.03-s009: Started on Jul 18, 2022 at 11:04:21 KST
+xrun(64): 19.03-s009: (c) Copyright 1995-2019 Cadence Design Systems, Inc.
+file: ../rtl/maint_handler.v
+module maint_handler #(parameter CS_WIDTH = 1)(
+                   |
+xmvlog: *W,RECOME (../rtl/maint_handler.v,5|19): recompiling design unit worklib.maint_handler:v.
+	First compiled from line 5 of ../rtl/maint_handler.v.
+file: ../rtl/RH_generator.v
+xmvlog: *N,DLWTLK: Pausing until a exclusive lock can be established on library 'worklib'.  Another process may be accessing the library.  Process will resume when the lock is established.
+
+Sending signal (20) to pid:  406830

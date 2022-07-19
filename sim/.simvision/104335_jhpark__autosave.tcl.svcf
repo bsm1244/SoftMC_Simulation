@@ -1,0 +1,291 @@
+
+#
+# Preferences
+#
+preferences set plugin-enable-svdatabrowser-new 1
+preferences set toolbar-sendToIndago-WaveWindow {
+  usual
+  position -pos 1
+}
+preferences set toolbar-Standard-Console {
+  usual
+  position -pos 1
+}
+preferences set toolbar-Search-Console {
+  usual
+  position -pos 2
+}
+preferences set plugin-enable-groupscope 0
+preferences set plugin-enable-interleaveandcompare 0
+preferences set plugin-enable-waveformfrequencyplot 0
+
+#
+# Databases
+#
+database require WAVE -search {
+	./WAVE/WAVE.trn
+	/scale/cal/home/jhpark/projects/iitp_hbm/2nd_year/softmc_ml605/sim/WAVE/WAVE.trn
+}
+
+#
+# Mnemonic Maps
+#
+mmap new  -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1536x800+-8+-8}] != ""} {
+    window geometry "Waveform 1" 1536x800+-8+-8
+}
+window target "Waveform 1" on
+waveform using {Waveform 1}
+waveform sidebar select designbrowser
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 175 \
+    -units ns \
+    -valuewidth 75
+waveform baseline set -time 0
+
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.clk
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.write_burst_ns
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.write_burst_r
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_address0[14:0]}
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_address1[14:0]}
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.xil_phy.dfi_rddata[255:0]}
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.ddr_dq[63:0]}
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.ddr_ck_n[1:0]}
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.ddr_ck_p[1:0]}
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_rd_capturer.dfi_rddata[255:0]}
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_rd_capturer.rdback_fifo_wrdata[255:0]}
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.xil_phy.dfi_wrdata[255:0]}
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.xil_phy.dfi_wrdata_en
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dec0_instr[31:0]}
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dec1_en
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dec1_instr[31:0]}
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_address0[14:0]}
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_address1[14:0]}
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_bank0[2:0]}
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_bank1[2:0]}
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_cas_n0
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_cas_n1
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_cke0
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_cke1
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_cs_n0[0:0]}
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_cs_n1[0:0]}
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_odt0[0:0]}
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_odt1[0:0]}
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_ras_n0
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_ras_n1
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_rddata_en
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_rddata_en_even
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_rddata_en_odd
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_ready
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_we_n0
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_we_n1
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_wrdata[255:0]}
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_wrdata_en
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.dfi_wrdata_mask[31:0]}
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.en0
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.en1
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.en_ack0
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.en_ack1
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.en_in0
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.en_in1
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.instr0[31:0]}
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.instr1[31:0]}
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.instr_in0[31:0]}
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.instr_in1[31:0]}
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.instr_src_ns
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.instr_src_r
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.io_config[1:0]}
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.io_config_strobe
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.load_counter
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.periodic_read_lock
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.pr_rd_ack
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.pr_rd_ack_ns
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.pr_rd_ack_r
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.read_burst_even_ns
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.read_burst_even_r
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.read_burst_ns
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.read_burst_odd_ns
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.read_burst_odd_r
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.read_burst_r
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.rst
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.test1
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.test2
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.wait_cycles_ns[9:0]}
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.wait_cycles_r[9:0]}
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.write_burst_data_ns[7:0]}
+	} ]
+set id [waveform add -signals  {
+	{WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.write_burst_data_r[7:0]}
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.write_burst_ns
+	} ]
+set id [waveform add -signals  {
+	WAVE::tb_softMC_top.uut.i_softmc.i_iseq_disp.i_instr_dispatcher.write_burst_r
+	} ]
+
+waveform xview limits 61007.168ns 61101.01ns
+
+#
+# Waveform Window Links
+#
+
+#
+# Console windows
+#
+console set -windowname Console
+window geometry Console 600x250+0+0
+
+#
+# Layout selection
+#
